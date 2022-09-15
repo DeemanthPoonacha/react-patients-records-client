@@ -20,7 +20,7 @@ function App() {
       setClaims(claimsData.data);
     }
     getClaimsFromServer();
-    console.log(claims);
+    // console.log(claims);
 // // console.log(claimsRecord);
 //     setClaims(claimsRecord);
     // setFilterStages([STAGES.IA,STAGES.EN,STAGES.DC,STAGES.FA]);
