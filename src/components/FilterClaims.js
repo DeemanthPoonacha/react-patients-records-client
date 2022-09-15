@@ -32,7 +32,7 @@ const FilterClaims = ({records,setClaims}) => {
             if (filterStages.includes(claim.stage)&&filterStatuses.includes(claim.status)) {
                 return claim;
             }
-            return;
+            return null;
         })
         setClaims(filteredData);
     }
