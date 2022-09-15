@@ -1,14 +1,25 @@
 const express= require('express')
 const app= express();
+const data = require('./records.json');
+const cors = require('cors');
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
-app.get('/',(req,res,next)=>{
-    let data={
-        id:1,
-        name:"test"
-    }
-    res.send(data)
+app.get('/claims',(req,res,next)=>{
+    let patientData = data
+    res.send(patientData)
+})
+
+app.get('/claims/:id', (req, res, next) => { 
+    let patientData = data.filter((d) => (d.id == req.params.id))
+    console.log(patientData);
+    res.send(patientData)
 })
 
 const PORT = process.env.PORT || 8080;
