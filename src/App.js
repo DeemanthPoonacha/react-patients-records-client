@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import ClaimsTable from './components/ClaimsTable';
 import FilterClaims from './components/FilterClaims';
+import './App.css'
 
 function App() {
   const [records, setRecords] = useState([])
@@ -32,12 +33,12 @@ function App() {
   // })
   
   return (
-    <div className="App container">
+    <div className="App container-fluid">
       <div className='row'>
-        <button type="button" className="col-2 btn btn-primary" onClick={() => setRefresh(!refresh)}>Refresh</button>
+        <button type="button" id="refresh" className="col-3 btn btn-info" onClick={() => setRefresh(!refresh)}>Refresh</button>
         <FilterClaims records={records} setClaims={setClaims} />
       </div>
-      <div className='row'>
+      <div className='row table-responsive'>
         <ClaimsTable claims={claims} setClaims={setClaims} />
       </div>
     </div>

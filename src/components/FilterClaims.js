@@ -39,10 +39,10 @@ const FilterClaims = ({records,setClaims}) => {
     
     return (
         <>
-            <a className="offset-8 col-2 btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Filter
-        </a>
-            <div className="collapse" id="collapseExample">
+            <a id="filter" className="offset-6 col-3 btn btn-dark" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Filter
+            </a>
+            <div className="collapse m-2" id="collapseExample">
                 <div className="card card-body">
                     <h3>Stage</h3>
                     <div className="form-group form-check">
@@ -70,7 +70,7 @@ const FilterClaims = ({records,setClaims}) => {
                         <input type="checkbox" className="form-check-input" id="statusT" onChange={(e)=>{FilterStatus(STATUSES.TQ,e.target.checked)}}/>
                         <label className="form-check-label" htmlFor="statusT">{STATUSES.TQ}</label>
                     </div>
-                    <button type="button" className="col-2 btn btn-primary" onClick={() => ApplyFilter('stage')}>Apply</button>
+                    <button type="button" className="col-2 btn btn-primary btn-sm mr-auto" onClick={() => ApplyFilter('stage')}>Apply</button>
                 </div>
             </div>
         </>
