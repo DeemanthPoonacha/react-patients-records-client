@@ -29,9 +29,10 @@ const FilterClaims = ({records,setClaims}) => {
     }
     const ApplyFilter = () => {
         let filteredData = records.filter((claim) => {
-        if (filterStages.includes(claim.stage)&&filterStatuses.includes(claim.status)) {
-            return claim;
-        };
+            if (filterStages.includes(claim.stage)&&filterStatuses.includes(claim.status)) {
+                return claim;
+            }
+            return;
         })
         setClaims(filteredData);
     }
